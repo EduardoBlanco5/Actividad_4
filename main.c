@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void Caracteres(int n, char arreglo[]);
+
 void CapturarNumeros() {
     int n[5];
     int s=0, p;
@@ -17,8 +19,11 @@ void CapturarNumeros() {
     
 }
 
+
 int main(){
 
+    char arreglo[] = "AEIOU";
+    int n;
     char op;
     do
     {
@@ -36,11 +41,11 @@ int main(){
         case '1':
             CapturarNumeros();
             break;
-        case 2:
-
+        case '2':
+            Caracteres(n, arreglo);
             break;
 
-        case 3:
+        case '3':
 
             break;
         
@@ -53,4 +58,17 @@ int main(){
 
     return 0;
 
+}
+
+void Caracteres(int n, char arreglo[]) {
+    printf("\nMostrar caracteres\n");
+    printf("Ingresa cuantas veces quieres que se repita el arreglo: ");
+    scanf("%i", &n);
+    printf("\n");
+    for (size_t i = 1; i <= n; i++)
+    {
+        printf("%i.- %s", i, arreglo);
+        printf("\n");
+    }
+    
 }
