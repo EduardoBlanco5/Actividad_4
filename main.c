@@ -1,27 +1,56 @@
 #include <stdio.h>
 
-int main(){
+void CapturarNumeros() {
+    int n[5];
+    int s=0, p;
+    printf("\nCapturar Numeros\n");
+    for (size_t i = 1; i < 6; i++)
+    {
+        printf("ingresa el numero %i: ",i);
+        scanf("%i", &n[i]);
 
-
-
-
-    return 0;
-
+        s = s+n[i];
+        p = s/5; 
+    }
+    printf("\nLa suma total es: %i\n", s);
+    printf("El promedio es: %i\n\n", p);
+    
 }
 
-void MenuPrincipal(){
-    int op;
+int main(){
+
+    char op;
     do
     {
        
-        printf("...Menu principal...");
-        printf("1.- \n");
-        printf("2.- \n");
-        printf("3.- \n");
-        printf("4.- \n");
+        printf("...Menu principal...\n");
+        printf("1.- Capturar numeros\n");
+        printf("2.- Mostrar caracteres\n");
+        printf("3.- Guardar personajes\n");
+        printf("4.- Salir\n");
         printf("Ingresa una opcion \n");
-        scanf("%i", &op);
+        scanf("%c", &op);
 
-    } while (op != 4);
+        switch (op)
+        {
+        case '1':
+            CapturarNumeros();
+            break;
+        case 2:
+
+            break;
+
+        case 3:
+
+            break;
+        
+        default:
+            break;
+        }
+
+        fflush(stdin);
+    } while (op != '4');
+
+    return 0;
 
 }
